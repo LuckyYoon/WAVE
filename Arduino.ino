@@ -32,21 +32,21 @@ void loop()
   
   while(HC12.available()) 
   { 
-    currentByte = HC12.read(); // Store each icoming byte from HC-12
+    currentByte = HC12.read(); // Store each incoming byte from HC-12
     delay(5);
     // Reads the data between the start "+" and end marker ";"
     if (read == true) 
     {
       if (currentByte != ';') 
       {
-        readValue += char(currentByte); // Add each byte to ReadBuffer string variable
+        readValue += char(currentByte); // Add each byte to readValue string variable
       }
       else 
       {
         read = false;
       }
     }
-    // Checks whether the received message statrs with the start marker "+"
+    // Checks whether the received message starts with the start marker "+"
     else if (currentByte == '+')
     {
       read = true; // If true start reading the message
