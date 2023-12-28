@@ -53,7 +53,7 @@ void loop()
     }
   }
 
-  data = readValue.toInt();
+  data = readValue.toInt(); //Convert the data to an integer
   
   Serial.write(data);
   
